@@ -1,0 +1,25 @@
+allprojects  {
+  apply plugin: 'maven-publish'
+  group = 'org.it-simulator'
+  version = '0.0.3'
+}
+
+subprojects {
+  ext {
+    junitVersion = '4.12'
+  }
+
+  apply plugin: 'java'
+  java {
+    sourceCompatibility = JavaVersion.VERSION_1_8
+    targetCompatibility = JavaVersion.VERSION_1_8
+  }
+
+  repositories {
+    maven { url 'https://repo1.maven.org/maven2' }
+  }
+
+  dependencies {
+    testImplementation "junit:junit:$junitVersion"
+  }
+}

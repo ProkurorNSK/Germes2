@@ -1,7 +1,9 @@
-.settings
-.springBeans
-bin
+.gradle
+bin/
+gradle
 target/
+build/
 .classpath
 .project
 .log
+.vscode/
