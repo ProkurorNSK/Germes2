@@ -1,6 +1,6 @@
 dependencies {
     implementation project(':germes-model')
-    implementation 'org.glassfish.jersey.containers:jersey-container-servlet:$jerseyVersion'
-    implementation 'org.glassfish.jersey.media:jersey-media-json-jackson:$jerseyVersion'
-    testRuntimeOnly 'org.glassfish.jersey.containers:jersey-container-grizzly2-http:$jerseyVersion'
+    implementation "org.glassfish.jersey.containers:jersey-container-servlet:$jerseyVersion"
+    implementation "org.glassfish.jersey.media:jersey-media-json-jackson:$jerseyVersion"
+    testRuntimeOnly "org.glassfish.jersey.containers:jersey-container-grizzly2-http:$jerseyVersion"
 }
