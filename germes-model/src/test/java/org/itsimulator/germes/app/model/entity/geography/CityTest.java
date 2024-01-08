@@ -1,53 +1,43 @@
 package org.itsimulator.germes.app.model.entity.geography;
 
-import org.junit.Test;
-import static org.junit.Assert.*;
-
+import org.itsimulator.germes.app.model.entity.transport.TransportType;
 import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.*;
 
 /**
  * Contains unit-tests to check functionality of {@link City} class
- * @author admin
+ * 
+ * @author Morenets
  *
  */
 public class CityTest {
 	private City city;
-
+	
 	@Before
 	public void setup() {
-		city = new City();
+		city = new City("Odessa");
 	}
-
+	
 	@Test
 	public void testAddValidStationSuccess() {
-		Station station = new Station();
-		
-		city.addStation(station);
-		
+		Station station = city.addStation(TransportType.AUTO);
+
 		assertTrue(containsStation(city, station));
 		assertEquals(city, station.getCity());
 	}
 
 	@Test(expected=NullPointerException.class)
-	public void testAddNullStationFailure() {
+	public void testAddStationNullTransportTypeFailure() {
 		city.addStation(null);
 
 		assertTrue(false);
 	}
 
 	@Test
-	public void testaddDuplicateStationFailure() {
-		Station station = new Station();		
-		city.addStation(station);
-		city.addStation(station);
-
-		assertEquals(city.getStations().size(), 1);
-	}
-
-	@Test
 	public void testRemoveStationSuccess() {
-		Station station = new Station();
-		city.addStation(station);
+		Station station = city.addStation(TransportType.AVIA);
 		
 		city.removeStation(station);
 
@@ -60,6 +50,7 @@ public class CityTest {
 
 		assertTrue(false);
 	}
+	
 	private boolean containsStation(City city, Station station) {
 		return city.getStations().contains(station);
 	}
