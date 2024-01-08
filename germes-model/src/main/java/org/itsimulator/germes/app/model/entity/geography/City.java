@@ -2,7 +2,9 @@ package org.itsimulator.germes.app.model.entity.geography;
 
 import java.util.Set;
 import java.util.HashSet;
+import java.util.Objects;
 
+import org.itsimulator.germes.app.infra.util.CommonUtil;
 import org.itsimulator.germes.app.model.entity.base.AbstractEntity;
 
 /**
@@ -55,7 +57,7 @@ public class City extends AbstractEntity {
 	}
 
 	public Set<Station> getStations() {
-		return stations;
+		return CommonUtil.getSafeSet(stations);
 	}
 
 	public void setStations(Set<Station> stations) {
@@ -67,10 +69,23 @@ public class City extends AbstractEntity {
 	 * @param station
 	 */
 	public void addStation(final Station station) {
+		Objects.requireNonNull(station, "station parameter is not initialized");
 		if(stations == null) {
 			stations = new HashSet<>();
 		}
 		stations.add(station);
+		station.setCity(this);
 	}
 
+	/**
+	 * Removes specified station from city station list
+	 * @param station
+	 */
+	public void removeStation(Station station) {
+		Objects.requireNonNull(station, "station parameter is not initialized");
+		if(stations == null) {
+			return;
+		}
+		stations.remove(station);
+	}
 }
