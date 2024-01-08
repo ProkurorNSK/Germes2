@@ -1,13 +1,14 @@
 allprojects  {
   apply plugin: 'maven-publish'
   group = 'org.it-simulator'
-  version = '0.0.5'
+  version = '0.0.6'
 }
 
 subprojects {
   ext {
     junitVersion = '4.12'
     guavaVersion = '18.0'
+    jerseyVersion = '2.19'
   }
 
   apply plugin: 'java'
