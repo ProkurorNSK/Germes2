@@ -21,7 +21,7 @@ import static org.junit.Assert.*;
  *
  */
 public class GeographicServiceImplTest {
-	private static final int DEFAULT_CITY_ID = 0;
+	private static final int DEFAULT_CITY_ID = 1;
 
 	private GeographicService service;
 
