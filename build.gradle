@@ -1,7 +1,6 @@
 allprojects  {
-  apply plugin: 'maven-publish'
   group = 'org.it-simulator'
-  version = '0.0.7'
+  version = '0.0.8'
 }
 
 subprojects {
@@ -12,6 +11,7 @@ subprojects {
   }
 
   apply plugin: 'java'
+
   java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8

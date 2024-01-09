@@ -1,0 +1,13 @@
+plugins {
+    id 'war'
+    id "org.gretty" version "3.0.6"
+}
+
+gretty {
+    contextPath = ''
+    servletContainer = 'jetty9'
+}
+
+dependencies {
+    implementation project(':germes-service')
+}

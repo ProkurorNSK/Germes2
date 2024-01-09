@@ -1,3 +1,4 @@
 rootProject.name = 'germes'
 include ':germes-service'
 include ':germes-model'
+include ':germes-presentation'

@@ -20,6 +20,6 @@ public class CityResource {
 	@GET
 	@Produces(MediaType.APPLICATION_JSON)
 	public List<String> findCities() {
-		return Lists.newArrayList("Москва", "Питер");
+		return Lists.newArrayList("Novosib", "Berdsk");
 	}
 }
