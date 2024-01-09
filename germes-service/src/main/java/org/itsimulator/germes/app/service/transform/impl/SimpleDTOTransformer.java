@@ -1,10 +1,14 @@
 package org.itsimulator.germes.app.service.transform.impl;
 
 import org.itsimulator.germes.app.infra.util.Checks;
+import org.itsimulator.germes.app.infra.util.CommonUtil;
 import org.itsimulator.germes.app.infra.util.ReflectionUtil;
 import org.itsimulator.germes.app.model.entity.base.AbstractEntity;
 import org.itsimulator.germes.app.rest.dto.base.BaseDTO;
 import org.itsimulator.germes.app.service.transform.Transformer;
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Default transformation engine that uses reflection to transform objects
@@ -13,6 +17,8 @@ import org.itsimulator.germes.app.service.transform.Transformer;
  *
  */
 public class SimpleDTOTransformer implements Transformer {
+
+	private static final Logger LOGGER = LoggerFactory.getLogger(SimpleDTOTransformer.class);
 
 	@Override
 	public <T extends AbstractEntity, P extends BaseDTO<T>> P transform(
@@ -24,6 +30,10 @@ public class SimpleDTOTransformer implements Transformer {
 		ReflectionUtil.copyFields(entity, dto,
 				ReflectionUtil.findSimilarFields(entity.getClass(), clz));
 		dto.transform(entity);
+
+		if (LOGGER.isDebugEnabled()) {
+			LOGGER.debug("SimpleDTOTransformer.transform: {} DTO object", CommonUtil.toString(dto));
+		}
 
 		return dto;
 	}
@@ -44,6 +54,10 @@ public class SimpleDTOTransformer implements Transformer {
 		ReflectionUtil.copyFields(dto, entity,
 				ReflectionUtil.findSimilarFields(dto.getClass(), clz));
 		dto.untransform(entity);
+
+		if (LOGGER.isDebugEnabled()) {
+			LOGGER.debug("SimpleDTOTransformer.transform: {} entity", CommonUtil.toString(dto));
+		}
 
 		return entity;
 	}

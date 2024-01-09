@@ -1,9 +1,9 @@
-.gradle
+.gradle/
 bin/
 gradle
 target/
 build/
 .classpath
 .project
-.log
+*.log
 .vscode/
