@@ -1,6 +1,6 @@
 allprojects  {
   group = 'org.it-simulator'
-  version = '0.1.7'
+  version = '0.1.8'
 }
 
 subprojects {
