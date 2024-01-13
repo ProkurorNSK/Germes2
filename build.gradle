@@ -1,15 +1,15 @@
 allprojects  {
   group = 'org.it-simulator'
-  version = '0.2.2'
+  version = '0.2.3'
 }
 
 subprojects {
   ext {
     junitVersion = '4.12'
     guavaVersion = '18.0'
-    jerseyVersion = '2.19'
+    jerseyVersion = '2.22.1'
     commonsLangVersion = '3.4'
-    log4jVersion = '2.3'
+    log4jVersion = '2.5'
     slf4jVersion = '1.7.12'
     powerMockVersion = '1.6.4'
   }
