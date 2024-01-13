@@ -1,3 +1,5 @@
 dependencies {
     implementation project(':germes-model')
+    testImplementation "org.hibernate:hibernate-tools:$hibernateVersion"
+    testRuntimeOnly "org.hibernate:hibernate-java8:$hibernateVersion"
 }
