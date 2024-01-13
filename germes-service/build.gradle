@@ -1,5 +1,6 @@
 dependencies {
     implementation project(':germes-model')
+    implementation project(':germes-persistence')
 
     implementation "org.glassfish.jersey.containers:jersey-container-servlet:$jerseyVersion"
     implementation "org.glassfish.jersey.media:jersey-media-json-jackson:$jerseyVersion"

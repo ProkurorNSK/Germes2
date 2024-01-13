@@ -45,7 +45,7 @@ public class CityResource extends BaseResource {
 		transformer = new SimpleDTOTransformer();
 
 		service = new GeographicServiceImpl();
-		City city = new City("Odessa");
+		City city = new City("Novosib");
 		city.addStation(TransportType.AUTO);
 		service.saveCity(city);
 	}

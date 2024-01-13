@@ -35,7 +35,7 @@ public class CityResourceTest extends JerseyTest {
 		assertEquals(cities.size(), 1);
 
 		Map<String, String> city = cities.get(0);
-		assertEquals(city.get("name"), "Odessa");
+		assertEquals(city.get("name"), "Novosib");
 	}
 	
 	@Test
@@ -43,7 +43,7 @@ public class CityResourceTest extends JerseyTest {
 		CityDTO city = target("cities/1").request().get(CityDTO.class);
 		assertNotNull(city);
 		assertEquals(city.getId(), 1);
-		assertEquals(city.getName(), "Odessa");
+		assertEquals(city.getName(), "Novosib");
 	}
 
 	@Test
