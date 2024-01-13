@@ -6,13 +6,14 @@ import java.util.Optional;
 import java.util.Set;
 import java.util.stream.Collectors;
 
+import javax.inject.Inject;
+
 import org.itsimulator.germes.app.model.entity.geography.City;
 import org.itsimulator.germes.app.model.entity.geography.Station;
 import org.itsimulator.germes.app.model.search.criteria.StationCriteria;
 import org.itsimulator.germes.app.model.search.criteria.range.RangeCriteria;
 import org.itsimulator.germes.app.service.GeographicService;
 import org.itsimulator.germes.app.persistence.repository.CityRepository;
-import org.itsimulator.germes.app.persistence.repository.inmemory.InMemoryCityRepository;
 
 /**
  * Default implementation of the {@link GeographicService}
@@ -23,8 +24,9 @@ import org.itsimulator.germes.app.persistence.repository.inmemory.InMemoryCityRe
 public class GeographicServiceImpl implements GeographicService {
 	private final CityRepository cityRepository;
 
-	public GeographicServiceImpl() {
-		cityRepository = new InMemoryCityRepository();
+	@Inject
+	public GeographicServiceImpl(CityRepository cityRepository) {
+		this.cityRepository = cityRepository;
 	}
 
 	@Override
