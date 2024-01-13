@@ -1,6 +1,6 @@
 allprojects  {
   group = 'org.it-simulator'
-  version = '0.2.0'
+  version = '0.2.1'
 }
 
 subprojects {
@@ -11,6 +11,7 @@ subprojects {
     commonsLangVersion = '3.4'
     log4jVersion = '2.3'
     slf4jVersion = '1.7.12'
+    powerMockVersion = '1.6.4'
   }
 
   apply plugin: 'java'

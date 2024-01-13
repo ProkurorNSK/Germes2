@@ -10,5 +10,6 @@ dependencies {
     testRuntimeOnly "org.glassfish.jersey.test-framework.providers:jersey-test-framework-provider-grizzly2:$jerseyVersion"
     testRuntimeOnly "org.glassfish.jersey.containers:jersey-container-grizzly2-http:$jerseyVersion"
 
-
+    testImplementation "org.powermock:powermock-module-junit4:$powerMockVersion"
+    testImplementation "org.powermock:powermock-api-mockito:$powerMockVersion"
 }
