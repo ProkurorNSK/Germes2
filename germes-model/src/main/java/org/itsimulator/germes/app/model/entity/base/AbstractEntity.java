@@ -2,13 +2,16 @@ package org.itsimulator.germes.app.model.entity.base;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.MappedSuperclass;
+
 import org.itsimulator.germes.app.model.entity.person.Account;
 
 /**
  * Base class for all business entities
- * @author admin
+ * @author Morenets
  *
  */
+@MappedSuperclass
 public abstract class AbstractEntity {
 	/**
 	 * Unique entity identifier
