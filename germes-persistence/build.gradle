@@ -1,5 +1,8 @@
 dependencies {
     implementation project(':germes-model')
+
+    implementation 'org.glassfish.hk2.external:javax.inject:2.5.0-b62'
+
     testImplementation "org.hibernate:hibernate-tools:$hibernateVersion"
     testRuntimeOnly "org.hibernate:hibernate-java8:$hibernateVersion"
 }
